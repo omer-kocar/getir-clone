@@ -1,12 +1,16 @@
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import RootNavigator from "./src/navigators/RootNavigator";
+import store from "../getir/src/redux/store";
+import { Provider } from "react-redux";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <RootNavigator />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <RootNavigator />
+      </NavigationContainer>
+    </Provider>
   );
 }
 
